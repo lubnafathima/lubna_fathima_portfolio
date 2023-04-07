@@ -1,38 +1,372 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+body {
+    background-color: #000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Header, .Skill, .Project, .bottom {
+    padding: 3em 10em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ProjectHeader h1, .Contact h1 {
+    font-size: 5em;
+}
+.Main a, .ProjectHeader a, .ContactRight a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: .1em;
+    position: relative;
+    padding-bottom: .5em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Main a::after, .ProjectHeader a::after, .ContactRight a::after {
+    height: .1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.Main a:hover > .Main a::after, .ProjectHeader a:hover > .ProjectHeader a::after, .ContactRight a:hover > .ContactRight a::after {
+    height: .5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Main h1 span::after, .Main a::after, .ProjectHeader a::after, .ContactRight a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: .1rem;
+    background-color: #4DE2A1;
 }
+
+/* **************  APP ******************* */
+
+.bottom {
+    background-image: url('./img/contact.png');
+}
+
+/* **************  HEADER ******************* */
+
+.Header {
+    background-image: url('./img/header_bg.png');
+}
+
+/* **************  NAVBAR ******************* */
+
+.Navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80vw;
+}
+
+.Navbar-logo {
+    font-size: 1.5em;
+    font-weight: 500;
+    width: 65vw;
+}
+
+.Navbar-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 15vw;
+}
+
+.Navbar-items > li {
+    list-style: none;
+    transition: .2s ease-in-out;
+}
+
+.Navbar-items > li:hover {
+    scale: 1.5;
+}
+
+/* **************  MAIN ******************* */
+
+.Main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    height: 80vh;
+    border-bottom: 2px solid gray;
+}
+
+.Main h1 {
+    font-size: 5em;
+}
+
+.Main h1 span {
+    position: relative;
+}
+
+.Main p {
+    font-size: 1.2em;
+    color: #BEBEBE;
+    width: 26vw;
+    margin: 2em 0;
+}
+
+/* **************  SKILL ******************* */
+
+.Skill {
+    background-image: url('./img/skill.png');
+    background-color: #000;
+}
+
+.SkillList {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+}
+
+.SkillList p {
+    text-transform: uppercase;
+    /* width: 20vw;
+    height: 10vh; */
+    font-size: 2em;
+    font-weight: 900;
+}
+
+@media (min-width: 600px) {
+    .SkillList { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+  
+@media (min-width: 900px) {
+    .SkillList { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* **************  Project ******************* */
+
+.ProjectHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5em;
+}
+
+.ProjectList {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+}
+
+.ProjectItem img {
+    width: 30vw;
+}
+
+.ProjectItem h2 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    margin: .5em 0;
+}
+
+.ProjectItem p {
+    display: flex;
+}
+
+.ProjectItem span {
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 500;
+    margin-right: 1em;
+    color: #BEBEBE;
+}
+
+@media (min-width: 600px) {
+    .ProjectList { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+  
+@media (min-width: 900px) {
+    .ProjectList { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* **************  Contact ******************* */
+    
+.Contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 0 20vh 0;
+    margin-bottom: 5em;
+    position: relative;
+    border-bottom: 2px solid gray;
+}
+
+/* .Contact:after {
+    content: "";
+    background: rgb(255, 255, 255);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 1px;
+} */
+
+.ContactLeft p {
+    margin-top: 2em;
+    font-size: 1.3em;
+    width: 30vw;
+    color: #BEBEBE;
+}
+
+.ContactRight form {
+    display: flex;
+    flex-direction: column;
+    /* padding-top: 5em; */
+}
+
+.ContactRight form input, .ContactRight form textarea {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #BEBEBE;
+    outline: none;
+    width: 30vw;
+    padding: 1em;
+    margin: 1em 0;
+    font-size: 1em;
+}
+
+.ContactRight form textarea {
+    overflow-y: hidden;
+}
+
+.ContactRight a {
+    margin-top: 2em;
+    float: right;
+    cursor: pointer;
+}
+
+/* **************  Footer ******************* */
+
+@media screen and (max-width: 1200px) {
+    .Main h1 {
+        font-size: 4em;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .Main h1 {
+        font-size: 3em;
+    }
+    .Main p {
+        font-size: 1em;
+        width: 35vw;
+    }
+    .Contact {
+        flex-direction: column;
+        align-items: center;
+    }
+    .Contact h1 {
+        text-align: center;
+    }
+    .ContactLeft p {
+        width: 60vw;
+    }
+    .ContactRight form {
+        display: flex;
+        flex-direction: column;
+    }
+    .ContactRight form input, .ContactRight form textarea {
+        width: 60vw;
+    }
+}
+    
+@media screen and (max-width: 900px) {
+    .Header, .Skill, .Project, .bottom {
+        padding: 3em;
+    }  
+}
+    
+@media screen and (max-width: 800px) {
+    .Main h1 {
+        font-size: 3em;
+    }
+    .Main p {
+        width: 50vw;
+    }
+    .Navbar-items {
+        width: 20vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .Main {
+        align-items: center;
+    }
+    .Main h1 {
+        font-size: 2.5em;
+    }
+    .Main p {
+        font-size: 1em;
+        width: 80vw;
+    }
+    .Navbar {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .Navbar-logo {
+        font-size: 1.5em;
+        font-weight: 500;
+        width: 18vw;
+    }
+    .Navbar-items {
+        margin-top: 1em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 60vw;
+    }
+    .ContactLeft p {
+        width: 80vw;
+    }
+    .ContactRight form input, .ContactRight form textarea {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .Main h1 {
+        font-size: 2em;
+    }
+    .SkillList p {
+        text-align: center;
+    }
+    .ProjectHeader {
+        margin-bottom: 0;
+    }
+    .ProjectItem {
+        text-align: center;
+    }
+    .ProjectItem img {
+        width: 80vw;
+        margin-top: 5em;
+    }
+    .ProjectItem p {
+        align-items: center;
+        text-align: center;
+        justify-content: space-around;
+    }
+    .ProjectHeader h1, .Contact h1 {
+        font-size: 3em;
+    }
+}
+
+/* **************  *** ******************* */
+/* 
+Mobile: 375px
+Desktop: 1440px */
