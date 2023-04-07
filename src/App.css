@@ -23,6 +23,7 @@ body {
     letter-spacing: .1em;
     position: relative;
     padding-bottom: .5em;
+    transition: .2s all ease-in;
 }
 
 .Main a::after, .ProjectHeader a::after, .ContactRight a::after {
@@ -31,6 +32,10 @@ body {
 
 .Main a:hover > .Main a::after, .ProjectHeader a:hover > .ProjectHeader a::after, .ContactRight a:hover > .ContactRight a::after {
     height: .5rem;
+}
+
+.Main a:hover, .ProjectHeader a:hover, .ContactRight a:hover {
+    color: #4DE2A1;
 }
 
 .Main h1 span::after, .Main a::after, .ProjectHeader a::after, .ContactRight a::after {
@@ -158,11 +163,15 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-gap: 1rem;
+    grid-gap: 5rem;
+}
+
+.ProjectItem {
+    text-decoration: none;
 }
 
 .ProjectItem img {
-    width: 30vw;
+    width: 36vw;
 }
 
 .ProjectItem h2 {
@@ -254,6 +263,9 @@ body {
 @media screen and (max-width: 1200px) {
     .Main h1 {
         font-size: 4em;
+    }
+    .ProjectItem img {
+        width: 30vw;
     }
 }
 

@@ -9,9 +9,9 @@ function Contact() {
       </div>
       <div className='ContactRight'>
         <form>
-          <input type='text' placeholder='NAME' />
-          <input type='email' placeholder='EMAIL' />
-          <textarea type='text' row="20" col="50c" placeholder='MESSAGE' />
+          <input type='text' placeholder='NAME' required/>
+          <input type='email' placeholder='EMAIL' required/>
+          <textarea type='text' row="20" col="50c" placeholder='MESSAGE' required/>
         </form>
         <a type='submit'>send message</a>
       </div>
