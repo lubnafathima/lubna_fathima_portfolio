@@ -80,6 +80,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     width: 15vw;
+    margin-right: 2em;
 }
 
 .Navbar-items > li {
@@ -267,6 +268,15 @@ body {
     .ProjectItem img {
         width: 30vw;
     }
+    .Navbar {
+        width: 75vw;
+    }
+    .Navbar-logo {
+        width: 55vw;
+    }
+    .Navbar-items {
+        width: 15vw;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -294,12 +304,31 @@ body {
     .ContactRight form input, .ContactRight form textarea {
         width: 60vw;
     }
+    .Navbar {
+        width: 70vw;
+    }
+    .Navbar-logo {
+        width: 50vw;
+    }
+    .Navbar-items {
+        width: 20vw;
+    }
 }
     
 @media screen and (max-width: 900px) {
     .Header, .Skill, .Project, .bottom {
         padding: 3em;
     }  
+    
+    .Navbar {
+        width: 90vw;
+    }
+    .Navbar-logo {
+        width: 70vw;
+    }
+    .Navbar-items {
+        width: 20vw;
+    }
 }
     
 @media screen and (max-width: 800px) {
@@ -354,6 +383,11 @@ body {
 @media screen and (max-width: 600px) {
     .Main h1 {
         font-size: 2em;
+    }
+    
+    .Navbar-logo {
+        width: 100vw;
+        text-align: center;
     }
     .SkillList p {
         text-align: center;
